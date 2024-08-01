@@ -4,7 +4,7 @@
 
 <div class="footer">
   <div class="contain">
-    <p><strong class="bold">&copy; {{ .Site.Title }}, {{ now.Year }}</strong>
+    <p><strong class="bold">&copy; {{ default .Site.Title (default .Site.Author.name .Site.Copyright) }}, {{ now.Year }}</strong>
        &nbsp; • &nbsp; <a href="#">{{ T "backToTop" }}</a>
     </p>
 
@@ -15,7 +15,7 @@
 
     {{ if not .Site.Params.disableIncidentHistory }}
       <hr>
-      
+
       <p class="hinted">
         <small>
           ⚡
